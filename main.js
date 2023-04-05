@@ -2,7 +2,7 @@ let contenedor_prductos = document.getElementById("contenedor_productos")
 let contenedor_filtro =document.getElementById("contenedor_filtro")
 let contenedorProductosPorCategoria =document.getElementById("mostrar-productos-categoria")
 
-let carrito=[]
+let carrito=JSON.parse(localStorage.getItem("carrito")) || []
 let categorias=[]
 
 
@@ -96,5 +96,15 @@ const agregarAlCarrito=(productoId)=>{
           imagen: item.img,
           cantidad: item.cantidad
         })
+        
     }
+    guardadolocal()
 }
+
+
+//*****************************************************************Localstorage */
+const guardadolocal=()=>{
+  localStorage.setItem("carrito",JSON.stringify(carrito))
+} 
+
+

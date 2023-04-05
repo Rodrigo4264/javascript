@@ -4,6 +4,22 @@ let contenedor_formulario_retiro= document.getElementById("contenedor_formulario
 let contenedor_formaDePago= document.getElementById("contenedor_formaDePago")
 let contenedor_formularioPago = document.getElementById("contenedor_formularioPago")
 
+
+
+
+
+let contenedor_monto= document.getElementById("contenedor_monto")
+let monto=document.createElement("div")
+monto.innerHTML=`
+<div class="col-9">Gracias por su compra</div>
+<div> <p>El monto a pagar es de ${totalFinal}</p></div>
+`
+contenedor_monto.append(monto)
+
+
+
+
+
 let opcioneRetiro= document.createElement("div")
 opcioneRetiro.className="row retiro-format"
 opcioneRetiro.innerHTML=`
@@ -95,6 +111,7 @@ function formularioefectivo(){
                                 </div>
                                 `
                                 contenedor_formularioPago.append(formulario_efectivo)
+                                finalizarCompra()
                             }
 
 
@@ -138,14 +155,14 @@ function formularioTarjeta(){
                                 formulario_credito.className="container"
                                 formulario_credito.innerHTML=`
                                 <div class="row">
-                            <div class="col-12"> <h3>Seleccione las cuotas</h3></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-3 coutas">   <p>1 cuota sin interes</p>  </div>
-                                <div class="col-3 coutas">   <p>3 cuota sin interes</p>  </div>
-                                <div class="col-3 coutas">   <p>6 cuota 10% interes</p>  </div>
-                                <div class="col-3 coutas">   <p>12 cuota 15% interes</p> </div>
-                            </div>
+                                    <div class="col-12"> <h3>Seleccione las cuotas</h3></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 coutas">   <p>1 cuota sin interes</p>  </div>
+                                    <div class="col-6 coutas">   <p>3 cuota sin interes</p>  </div>
+                                    <div class="col-6 coutas">   <p>6 cuota 10% interes</p>  </div>
+                                    <div class="col-6 coutas">   <p>12 cuota 15% interes</p> </div>
+                                </div>
                                 `
                             contenedor_formularioPago.append(formulario_credito)
                             }
@@ -204,5 +221,14 @@ function formularioTarjeta(){
                                 }
                               })
                               
-                                                          
+                              finalizarCompra()                                           
+ }
+
+ function finalizarCompra(){
+  const finalizar = document.createElement("div")
+  finalizar.innerHTML=`
+  <button id="boton-realizar-pago" class="boton-realizar-pago">Realizar Pago </button>`
+
+  contenedor_formularioPago.append(finalizar)
+
  }
