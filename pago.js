@@ -21,9 +21,10 @@ contenedor_monto.append(monto)
 
 
 let opcioneRetiro= document.createElement("div")
-opcioneRetiro.className="row retiro-format"
+opcioneRetiro.className="container retiro-format"
 opcioneRetiro.innerHTML=`
-<div class="col-12 pago-op"><p>Seleccione como deces recibir su pedido</p></div>
+<div class="row">
+            <div class="col-12 pago-op"><p>Seleccione como deces recibir su pedido</p></div>
            
         
             <div class="col-6 retiro-input">
@@ -35,6 +36,7 @@ opcioneRetiro.innerHTML=`
                 <label for="Adomicilio">A domicilio</label>
                 <input type="radio" name="retiro" value="adomicilio" id="Adomicilio">
             </div>
+</div>
 `
 contenedor_retiro.append(opcioneRetiro)
 
@@ -83,17 +85,42 @@ function formulario_retiro(){
                                 formularioRetiro.className=" row formularioretiro"
                                 formularioRetiro.id="formularioretiro"
                                 formularioRetiro.innerHTML=`
-                                <form action="">
-                                    <label for="retiro_nombre">Nombre</label>
-                                    <input type="text" name="retiro_nombre" id="retiro_nombre">
-                                    <label for="retiro_direccion">Direccion</label>
-                                    <input type="text" name="retiro_direccion" id="retiro_direccion">
-                                    <label for="retiro_numerocalle">Numero</label>
-                                    <input type="number" name="retiro_numerocalle" id="retiro_numerocalle">
-                                    <label for="retiro_telefono">Numeor de telefono</label>
-                                    <input type="tel" name="retiro_telefono" id="retiro_telefono">
-                                    </form>
-                                `
+                                <form action="#" method="get" enctype="text/plain" class="container border rounded" >
+        
+
+  <div class="row">
+    <div class="col-12 col-md-6 mb-3 mt-3">
+      <label class="label__text" for="userName">Nombre: </label>
+      <input class="form-control" type="text" name="userName" id="userName" placeholder="Ingrese su nombre">
+    </div>
+    <div class="col-12 col-md-6 mb-3 mt-3">
+        <label class="label__text" for="userLastName">Apellido: </label>
+       <input class="form-control" type="text" name="userLastName" id="userLastName" placeholder="Ingrese su apellido">
+    </div>
+    <div class="col-12 mb-3">
+      <label class="label__text" for="userEmail">direccion: </label>
+      <input class="form-control" type="email" name="userEmail" id="userEmailS" placeholder="Ingrese su direccion">
+    </div>
+    <div class="col-12 mb-3">
+      <label class="label__text" for="userNumber">Telefono: </label>
+      <input class="form-control" type="tel" name="userNumber" id="userNumber" placeholder="Ingrese su numero de telefono">
+    </div>
+    <div class="col-12 col-md-6  mb-3 d-flex align-items-center">
+      <label class="form__text pe-3" for="userAddInfo">Desea recibir promociones a s telefono?</label>
+        <input type="checkbox" name="userAddInfo" id="userAddInfo">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">dejenos cualquier informacion relevante para el servicio</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+    </div>
+    <div class="d-flex justify-content-center mb-2">
+      <input class="botton bg-primary-subtle border-1 rounded " type="submit" value="     Enviar     ">
+    </div>
+  </div>
+       
+
+</form>
+`
                                 contenedor_formulario_retiro.append(formularioRetiro)
                                 }
 
@@ -133,19 +160,37 @@ function formularioTarjeta(){
                                           </div>
                             </section>
                                
-                                 <form action="" class="formulariotarjeta">
-                                          <div class="row">
-                                              <div class="col-5">
-                                                  <div class="row">
-                                                      <div class="col-12"> <input type="number" name="" id="formulario_numero" placeholder="numero de tarjeta"> </div>
-                                                      <div class="col-12"> <input type="text" name="" id="formulario_nombre" placeholder="nombre de la tarjeta"> </div>
-                                                      <div class="col-4">  <input type="text" class="input" id="formulario_mes" placeholder="MM" maxlength="2" required></div>
-                                                      <div class="col-4"><input type="text" class="input" id="formulario_anio" placeholder="YY" maxlength="2" required></div>
-                                                      <div class="col-4"><input type="text" class="input" id="formulario_ccv" placeholder="codigo de seguridad" maxlength="3" required></div>   
-                                                  </div>
-                                              </div>
-                                          </div>
-                                   </form>
+                            <form action="#" method="get" enctype="text/plain" class="container border rounded" >
+        
+
+                            <div class="row">
+                              <div class="col-12 mb-3 mt-3">
+                                <label class="label__text" for="userName">numero de tarjeta: </label>
+                                <input class="form-control" type="text" name="userName" id="formulario_numero" placeholder="numero de tarjeta" required>
+                              </div>
+                              <div class="col-12 mb-3 mt-3">
+                                  <label class="label__text" for="userLastName">Nombre del titular: </label>
+                                 <input class="form-control" type="text" name="userLastName" id="formulario_nombre" placeholder="Nombre del titular" required>
+                              </div>
+                              <div class="col-12 col-md-4 mb-3">
+                                <label class="label__text" for="userName">Mes de vencimiento: </label>
+                                <input class="form-control" type="text" name="origincity" id="formulario_mes" placeholder="MM" maxlength="2" required>
+                              </div>
+                              <div class="col-12 col-md-4 mb-3">
+                                  <label class="label__text" for="userLastName">anio de vencimiento: </label>
+                                 <input class="form-control" type="text" name="descity" id="formulario_anio" placeholder="YY" maxlength="2" required>
+                              </div>
+                              <div class="col-12 col-md-4  mb-3">
+                                <label class="form__text" for="pasNumber">CCV:</label>
+                                  <input class="form-control" type="number" name="pasNumber" id="formulario_ccv" placeholder="CCV" maxlength="3" required>
+                              </div>
+                              <div class="d-flex justify-content-center mb-2">
+                                <input class="botton bg-primary-subtle border-1 rounded " type="submit" value="     Enviar     ">
+                              </div>
+                            </div>
+                                 
+                          
+                          </form>
                                
                             `
                             contenedor_formularioPago.append(formularioTarjeta)
@@ -158,10 +203,25 @@ function formularioTarjeta(){
                                     <div class="col-12"> <h3>Seleccione las cuotas</h3></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6 coutas">   <p>1 cuota sin interes</p>  </div>
-                                    <div class="col-6 coutas">   <p>3 cuota sin interes</p>  </div>
-                                    <div class="col-6 coutas">   <p>6 cuota 10% interes</p>  </div>
-                                    <div class="col-6 coutas">   <p>12 cuota 15% interes</p> </div>
+                                <div class="col-12 col-md-3  mb-3">
+                                  <label for="couta1">1 cuota sin interes</label>
+                                  <input type="radio" name="cant_cuotas" id="couta1" class="coutas" >
+                                </div>
+
+                                <div class="col-12 col-md-3  mb-3">
+                                  <label for="couta3">3 cuota sin interes</label>
+                                  <input type="radio" name="cant_cuotas" id="couta3" class="coutas" >
+                                </div>
+
+                                <div class="col-12 col-md-3  mb-3">
+                                  <label for="couta6">6 cuota 10% interes</label>
+                                  <input type="radio" name="cant_cuotas" id="couta6" class="coutas" >
+                                </div>
+
+                                <div class="col-12 col-md-3  mb-3">
+                                  <label for="cuota12">12 cuota 15% interes</label>
+                                  <input type="radio" name="cant_cuotas" id="cuota12" class="coutas" >
+                                </div>
                                 </div>
                                 `
                             contenedor_formularioPago.append(formulario_credito)
@@ -226,6 +286,7 @@ function formularioTarjeta(){
 
  function finalizarCompra(){
   const finalizar = document.createElement("div")
+  finalizar.className="boton-finalizar"
   finalizar.innerHTML=`
   <button id="boton-realizar-pago" class="boton-realizar-pago">Realizar Pago </button>`
 

@@ -19,19 +19,27 @@ color: antiquewhite;
 }
 
 #contenedor_retiro{
-justify-content: center;
+
 }
 
 .pago-op{
-    display: flex;
+    
     font-size: 25px;
+    align-items: center;
     
 }
 
 .retiro-format{
     display: flex;
+    background-color: aquamarine;
     justify-content: center;
+
 }
+.retiro-input{
+    margin: auto;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
 
 
 .frente_tarjeta{
@@ -72,6 +80,7 @@ justify-content: center;
         left: 575px;
         color: red;
     }
+    /////////////////////////////////////////////////////////////////////////////////////
     
     #formulario_numero, #formulario_nombre{
         margin-bottom: 10px;
