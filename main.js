@@ -47,12 +47,12 @@ if (selecionPoCategoria_option!="seleccione"){
 //*****************************************************Pone los elementos de listaporductos en el HTML****************************************************************** */
 inyectarProductoHTML(listaProductos,contenedor_prductos)
 
-//**************************************************************             FUNCUINES    ***************************************************************************** */
+//**************************************************************   FUNCUINES    ***************************************************************************** */
 
 function inyectarProductoHTML(array,ubicacion){
     array.forEach((producto) => {
         let item = document.createElement("div")
-        item.className= "col-3 item"
+        item.className= "col-12 col-md-3 item"
         item.id=`item-${producto.id}`
         item.innerHTML=`
        
