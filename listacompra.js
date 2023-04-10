@@ -10,7 +10,7 @@ vercarrito.addEventListener("click",()=>{
 //*************************************************************************************************************** */
 const llamarcarrito=()=>{
 
-  listaDeCompras.style.display = "flex"                   
+                     
   listaDeCompras.innerHTML=""
 
 encabezadoCArrito()
@@ -18,10 +18,7 @@ productoDelCarrito(carrito)
 totalFinalDelCarrito()
 
 
-const cierreCarrito= document.getElementById("cierra_carrito")
-cierreCarrito.addEventListener("click",()=>{
-  listaDeCompras.style.display ="none"
-})
+
 
 
 const botonPagar = document.createElement("div")
@@ -41,17 +38,14 @@ guardadolocal()
 const encabezadoCArrito=()=>{
   const listaDeagregados = document.createElement("div")
   listaDeagregados.innerHTML =`
-  <div class="row">
-    <div class="col encabezado"> <h3>Tu lista de compras</h3>  </div>
-    <div class="col-3"> <p id="cierra_carrito" class="cierra_carrito">seguir comprando</p>  </div>
-  </div>
-  <div class="row">
-    <div class="col-2">     </div>
-    <div class="col-3">     <p class="card-text"><b>Nombre</b></p></div>     
-    <div class="col-2">     <p class="card-text"><b>Precio</b></p></div>
-    <div class="col-3">     <p class="card-text"><b>Cantidad</b></p></div>
-    <div class="col-1">     <p class="card-text"><b>Subtotal</b></p></div>
-    <div class="col-1">     </div>
+ 
+  <div class="row ">
+    <div class="col-2 d-none d-lg-block">     </div>
+    <div class="col-3 ">     <p class="card-text"><b>Nombre</b></p></div>     
+    <div class="col-2 d-none d-lg-block">     <p class="card-text"><b>Precio</b></p></div>
+    <div class="col-3 ">     <p class="card-text"><b>Cantidad</b></p></div>
+    <div class="col-1 ">     <p class="card-text"><b>Subtotal</b></p></div>
+    <div class="col-1 d-none d-lg-block">     </div>
   </div>
   `
   listaDeCompras.append(listaDeagregados)
@@ -63,16 +57,16 @@ const productoDelCarrito=(carrito)=>{
   for (const producto of carrito) {
       let carritocompra = document.createElement("div")
     
-     carritocompra.className ="col-12 mt-4"
+     carritocompra.className ="col-12  mt-4"
       carritocompra.id = `carritocompra-${producto.id}`
       carritocompra.innerHTML = `
-      <div class="row justify-content-center">
-      <div class="col-2"><img src="${producto.imagen}" class="img-fluid imagen-producto-carrito " alt="producto"></div>
+      <div class="row">
+      <div class="col-2 d-none d-lg-block"><img src="${producto.imagen}" class="img-fluid imagen-producto-carrito " alt="producto"></div>
       <div class="col-3"><p ><b>${producto.nombre}</b></p>  </div>
-      <div class="col-2"><p class="card-text "><b>$${producto.precio}</b></p> </div>
+      <div class="col-2 d-none d-lg-block"><p class="card-text "><b>$${producto.precio}</b></p> </div>
       <div class="col-3"><p class="card-text "><b>${producto.cantidad}</b> <span id="mas${producto.id}" class="boton-inre">🔼</span>/<span id="menos${producto.id}" class="boton-inre">🔽</span> </p> </div>
       <div class="col-1"><p class="card-text "><b>$${producto.cantidad * producto.precio}</b></p> </div>
-      <div class="col-1"><button id="eliminar${producto.id}" class="boton-eliminar">✖️ </button></div>
+      <div class="col-1 d-none d-lg-block"><button id="eliminar${producto.id}" class="boton-eliminar">✖️ </button></div>
     </div>`;
         listaDeCompras.append(carritocompra)
     

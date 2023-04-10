@@ -52,7 +52,7 @@ inyectarProductoHTML(listaProductos,contenedor_prductos)
 function inyectarProductoHTML(array,ubicacion){
     array.forEach((producto) => {
         let item = document.createElement("div")
-        item.className= "col-12 col-md-3 item"
+        item.className= "col-12 col-md-4 col-lg-3 item"
         item.id=`item-${producto.id}`
         item.innerHTML=`
        
@@ -99,6 +99,7 @@ const agregarAlCarrito=(productoId)=>{
         
     }
     guardadolocal()
+    mostrartoast()
 }
 
 
@@ -106,5 +107,26 @@ const agregarAlCarrito=(productoId)=>{
 const guardadolocal=()=>{
   localStorage.setItem("carrito",JSON.stringify(carrito))
 } 
+
+//******************************************************************toast */
+
+function mostrartoast(){
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  Toast.fire({
+    icon: 'success',
+    title: 'Producto agregado'
+  })
+}
 
 

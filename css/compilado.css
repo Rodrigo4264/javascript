@@ -2,10 +2,8 @@
   width: 300px; }
 
 .img_carrito {
-  font-size: 50px;
-  cursor: pointer;
-  display: inline;
-  align-items: end; }
+  color: white;
+  font-size: 30px; }
 
 .ContenedorDeFiltro {
   margin-bottom: 15px; }
@@ -75,14 +73,14 @@
   background: blue;
   color: antiquewhite; }
 
+.gracia {
+  font-size: 70px; }
+
 .pago-op {
-  font-size: 25px;
-  align-items: center; }
+  font-size: 25px; }
 
 .retiro-format {
-  display: flex;
-  background-color: aquamarine;
-  justify-content: center; }
+  display: flex; }
 
 .retiro-input {
   margin: auto; }

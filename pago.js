@@ -11,8 +11,8 @@ let contenedor_formularioPago = document.getElementById("contenedor_formularioPa
 let contenedor_monto= document.getElementById("contenedor_monto")
 let monto=document.createElement("div")
 monto.innerHTML=`
-<div class="col-9">Gracias por su compra</div>
-<div> <p>El monto a pagar es de ${totalFinal}</p></div>
+<div class="col-9 gracia">Gracias por su compra</div>
+<div class="preciofinal"> <p>El monto a pagar es de ${totalFinal}</p></div>
 `
 contenedor_monto.append(monto)
 
@@ -23,16 +23,16 @@ contenedor_monto.append(monto)
 let opcioneRetiro= document.createElement("div")
 opcioneRetiro.className="container retiro-format"
 opcioneRetiro.innerHTML=`
-<div class="row">
-            <div class="col-12 pago-op"><p>Seleccione como deces recibir su pedido</p></div>
+<div class="row ">
+            <div class="col-12 pago-op d-flex justify-content-center"><p>Seleccione como deces recibir su pedido</p></div>
            
         
-            <div class="col-6 retiro-input">
+            <div class="col-6 retiro-input d-flex justify-content-center">
                 <label for="Retiroenlocal">Retiro en local</label>
                 <input type="radio" name="retiro" value="retiroEnLocal" id="Retiroenlocal">
             </div>   
 
-            <div class="col-6 retiro-input">
+            <div class="col-6 retiro-input d-flex justify-content-center">
                 <label for="Adomicilio">A domicilio</label>
                 <input type="radio" name="retiro" value="adomicilio" id="Adomicilio">
             </div>
@@ -114,7 +114,7 @@ function formulario_retiro(){
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
     </div>
     <div class="d-flex justify-content-center mb-2">
-      <input class="botton bg-primary-subtle border-1 rounded " type="submit" value="     Enviar     ">
+      <input class="botton bg-primary-subtle border-1 rounded " type="submit" value="Validar">
     </div>
   </div>
        

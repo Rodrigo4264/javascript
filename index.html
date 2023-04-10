@@ -10,30 +10,17 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html"><img src="./imagen/logo/logo_manati.png" class="img-fluid header-logo" alt="Lgo manati"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active img_carrito" id="img_carrito" aria-current="page" href="#">🛒</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li> -->
-          </ul>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-2"><img src="./imagen/logo/logo_manati.png" class="img-fluid header-logo header-logo" alt="logo manati"></div>
+        <div class="col-2">
+          <button type="button" class="btn btn-primary img_carrito" id="img_carrito" data-bs-toggle="modal" data-bs-target="#mimodal">
+            🛒
+          </button>
         </div>
       </div>
-    </nav>
+    </div>
 
   </header>
 
@@ -41,7 +28,27 @@
     <div class="container">
 
       <section class="lista">
-        <div id="listaDeCompras" class="row listaDeCompras"></div>
+        <div class="modal fade" id="mimodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Tu lista de compras</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div id="listaDeCompras" class="row listaDeCompras"></div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">finalizar compra</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </section>
 
       <section class="ContenedorDeFiltro">
@@ -63,6 +70,7 @@
   <footer>
 
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="productos.js"></script>
   <script src="main.js"></script>
   <script src="listacompra.js"></script>
