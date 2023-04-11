@@ -12,6 +12,10 @@
   font-size: 25px;
   margin-bottom: 15px; }
 
+.aFinalizarCompra {
+  text-decoration: none;
+  color: white; }
+
 .encabezado {
   margin: 10px;
   color: blue; }

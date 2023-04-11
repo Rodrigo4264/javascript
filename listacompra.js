@@ -21,12 +21,7 @@ totalFinalDelCarrito()
 
 
 
-const botonPagar = document.createElement("div")
-botonPagar.className = "row"
-botonPagar.innerHTML =`
-<button id="botonPagar" class="botonPagar"><a href="../pages/pago.html">FINALIZAR COMPRA</a> </button>
-`;
-listaDeCompras.append(botonPagar)
+
 
 guardadolocal()
 }
@@ -40,7 +35,7 @@ const encabezadoCArrito=()=>{
   listaDeagregados.innerHTML =`
  
   <div class="row ">
-    <div class="col-2 d-none d-lg-block">     </div>
+   
     <div class="col-3 ">     <p class="card-text"><b>Nombre</b></p></div>     
     <div class="col-2 d-none d-lg-block">     <p class="card-text"><b>Precio</b></p></div>
     <div class="col-3 ">     <p class="card-text"><b>Cantidad</b></p></div>
@@ -52,6 +47,13 @@ const encabezadoCArrito=()=>{
 }
 
 //***********************************************************************LISTA DEL CARRITO */
+// <div class="col-2 d-none d-lg-block">     </div>
+
+//<div class="col-2 d-none d-lg-block"><img src="${producto.imagen}" class="img-fluid imagen-producto-carrito " alt="producto"></div>
+
+
+
+
 const productoDelCarrito=(carrito)=>{
 
   for (const producto of carrito) {
@@ -61,12 +63,12 @@ const productoDelCarrito=(carrito)=>{
       carritocompra.id = `carritocompra-${producto.id}`
       carritocompra.innerHTML = `
       <div class="row">
-      <div class="col-2 d-none d-lg-block"><img src="${producto.imagen}" class="img-fluid imagen-producto-carrito " alt="producto"></div>
+      
       <div class="col-3"><p ><b>${producto.nombre}</b></p>  </div>
       <div class="col-2 d-none d-lg-block"><p class="card-text "><b>$${producto.precio}</b></p> </div>
       <div class="col-3"><p class="card-text "><b>${producto.cantidad}</b> <span id="mas${producto.id}" class="boton-inre">🔼</span>/<span id="menos${producto.id}" class="boton-inre">🔽</span> </p> </div>
-      <div class="col-1"><p class="card-text "><b>$${producto.cantidad * producto.precio}</b></p> </div>
-      <div class="col-1 d-none d-lg-block"><button id="eliminar${producto.id}" class="boton-eliminar">✖️ </button></div>
+      <div class="col-2"><p class="card-text "><b>$${producto.cantidad * producto.precio}</b></p> </div>
+      <div class="col-1"><button id="eliminar${producto.id}" class="boton-eliminar">✖️ </button></div>
     </div>`;
         listaDeCompras.append(carritocompra)
     
