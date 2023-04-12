@@ -4,7 +4,7 @@ let contenedor_formulario_retiro= document.getElementById("contenedor_formulario
 let contenedor_formaDePago= document.getElementById("contenedor_formaDePago")
 let contenedor_formularioPago = document.getElementById("contenedor_formularioPago")
 
-
+let precioFinal=JSON.parse(localStorage.getItem("precioFinal"))
 
 
 
@@ -12,7 +12,7 @@ let contenedor_monto= document.getElementById("contenedor_monto")
 let monto=document.createElement("div")
 monto.innerHTML=`
 <div class="col-9 gracia">Gracias por su compra</div>
-<div class="preciofinal"> <p>El monto a pagar es de ${totalFinal}</p></div>
+<div class="preciofinal"> <p>El monto a pagar es de $${precioFinal}</p></div>
 `
 contenedor_monto.append(monto)
 
@@ -45,6 +45,9 @@ let retiroEnLocal = document.getElementById("Retiroenlocal")
 let adomicilio = document.getElementById("Adomicilio")
 retiroEnLocal.addEventListener("click",formulario_retiro)
 adomicilio.addEventListener("click",formulario_retiro)
+
+//*************************************************************************************************************************************************** */
+
 
 
 //*************************************************************************************************************************************************** */
@@ -114,7 +117,7 @@ function formulario_retiro(){
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
     </div>
     <div class="d-flex justify-content-center mb-2">
-      <input class="botton bg-primary-subtle border-1 rounded " type="submit" value="Validar">
+      <input class="botton bg-primary-subtle border-1 rounded " type="submit" id="validarFormularioRetiro" value="Validar">
     </div>
   </div>
        
@@ -293,3 +296,4 @@ function formularioTarjeta(){
   contenedor_formularioPago.append(finalizar)
 
  }
+

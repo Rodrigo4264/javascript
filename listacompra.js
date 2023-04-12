@@ -95,16 +95,17 @@ const productoDelCarrito=(carrito)=>{
 }
 
 //***********************************************************************************MONTOFINAL Y BOTONPAGO */
-const totalFinalDelCarrito=() =>{
+  function totalFinalDelCarrito() {
   let totalFinal= carrito.map(itemCompra=> itemCompra.precio * itemCompra.cantidad).reduce((acc, el) => acc+el,0)
   const totalDeCompra= document.createElement("div")
   totalDeCompra.className="row"
   totalDeCompra.innerHTML =`
-  <div class="col-10">  <H2>total a pagar: </H2></div>
-  <div class="col-2 totalApagarn">$${totalFinal}</div>
+  <div class="col-8">  <H2>total a pagar: </H2></div>
+  <div class="col-4 totalApagarn">$${totalFinal}</div>
   `
   listaDeCompras.append(totalDeCompra)
  
+  localStorage.setItem("precioFinal",JSON.stringify(totalFinal))
 }
 
 //*****************************************************************incrementar, disminuir o eliminar producto******** */

@@ -20,7 +20,7 @@ categoriasUnicas.forEach(categoria => {
   opcion.text = categoria;
   select.appendChild(opcion);
 });
-contenedor_filtro.appendChild(select);
+contenedor_filtro.append(select);
 
 //***********************************************************Trae los elementos del lista que son llamados por el filtro de cgrupo************************************* */
 
