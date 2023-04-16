@@ -80,11 +80,15 @@
 .gracia {
   font-size: 70px; }
 
+.preciofinal {
+  font-size: 30px; }
+
 .pago-op {
   font-size: 25px; }
 
-.retiro-format {
-  display: flex; }
+.finCompra {
+  color: white;
+  text-decoration: none; }
 
 .retiro-input {
   margin: auto; }
